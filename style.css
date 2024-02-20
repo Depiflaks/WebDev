@@ -4,6 +4,17 @@
     box-sizing: 0;
 }
 
+body {
+    height: 100%;
+    background-color: black;
+}
+
+.container {
+    max-width: 1440px;
+    margin: auto;
+    background-color: #f7f7f7;
+}
+
 header {
     display: flex;
     flex-direction: row;
@@ -27,6 +38,7 @@ header .links {
 }
 
 header .links a div {
+    font-family: 'Oxygen', sans-serif;
     padding: 10px 20px;
 }
 
@@ -61,7 +73,6 @@ header .links a div {
     width: 100%;
     height: 534px;
     margin-top: 113px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 .main-text {
@@ -77,14 +88,14 @@ header .links a div {
 
 footer {
     font-family: "Lora", serif;
-    width: 100%;
+    width: 1440px;
     height: 89px;
 }
 
 .shadow {
     z-index: 1;
     position: absolute;
-    width: 100%;
+    width: 1440px;
     height: 89px;
     background-color: rgba(35, 47, 56, 60%);
 }
@@ -92,7 +103,7 @@ footer {
 footer img {
     z-index: 0;
     position: absolute;
-    width: 100%;
+    width: 1440px;
     height: 89px;
 }
 
@@ -117,6 +128,7 @@ footer .bar .links {
     align-items: center;
     text-transform: uppercase;
     color: rgba(255, 255, 255, 60%);
+    font-family: 'Oxygen', sans-serif;
     font-size: 11px;
     line-height: 26px;
     letter-spacing: 1px;
