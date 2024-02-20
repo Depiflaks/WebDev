@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: 0;
-
 }
 
 header {
@@ -31,13 +30,13 @@ header .links a div {
     padding: 10px 20px;
 }
 
-.caption {
+.heading {
     width: 100%;
     text-align: center;
     font-family: "Lora", serif;
 }
 
-.title {
+.main-title {
     margin: 82px auto 0;
     width: 498px;
     height: 51px;
@@ -58,9 +57,8 @@ header .links a div {
     letter-spacing: 0%;
 }
 
-.image {
+.body-image {
     width: 100%;
-    background-image: url("body.png");
     height: 534px;
     margin-top: 113px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
@@ -68,6 +66,9 @@ header .links a div {
 
 .main-text {
     padding: 140px 240px 135px;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
     font-family: 'Oxygen', sans-serif;
     color: #101315;
     font-size: 24px;
@@ -76,22 +77,29 @@ header .links a div {
 
 footer {
     font-family: "Lora", serif;
-    background-image: url("footer.png");
     width: 100%;
     height: 89px;
 }
 
 .shadow {
-    z-index: 0;
+    z-index: 1;
     position: absolute;
     width: 100%;
     height: 89px;
     background-color: rgba(35, 47, 56, 60%);
 }
 
+footer img {
+    z-index: 0;
+    position: absolute;
+    width: 100%;
+    height: 89px;
+}
+
+
 footer .bar {
     position: relative;
-    z-index: 1;
+    z-index: 2;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -103,11 +111,11 @@ footer .bar {
 
 footer .bar .links {
     display: flex;
+    width: 640px;
     gap: 20px;
     justify-content: flex-end;
-    text-transform: uppercase;
     align-items: center;
-    width: 640px;
+    text-transform: uppercase;
     color: rgba(255, 255, 255, 60%);
     font-size: 11px;
     line-height: 26px;
