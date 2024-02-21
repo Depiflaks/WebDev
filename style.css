@@ -25,10 +25,6 @@ header {
     color: #2e2e2e;
 }
 
-.logo {
-    font-size: 26px;
-}
-
 header .links {
     display: flex;
     font-size: 12px;
@@ -37,7 +33,17 @@ header .links {
     align-items: center;
 }
 
-header .links a div {
+.logo {
+    width: 92px;
+    height: 26px;
+}
+
+header .logo {
+    margin-top: 20px;
+}
+
+.links a {
+    display: block;
     font-family: 'Oxygen', sans-serif;
     padding: 10px 20px;
 }
@@ -77,9 +83,6 @@ header .links a div {
 
 .main-text {
     padding: 140px 240px 135px;
-    display: flex;
-    flex-direction: column;
-    gap: 35px;
     font-family: 'Oxygen', sans-serif;
     color: #101315;
     font-size: 24px;
@@ -88,39 +91,22 @@ header .links a div {
 
 footer {
     font-family: "Lora", serif;
-    width: 1440px;
+    width: 960px;
     height: 89px;
-}
-
-.shadow {
-    z-index: 1;
-    position: absolute;
-    width: 1440px;
-    height: 89px;
-    background-color: rgba(35, 47, 56, 60%);
-}
-
-footer img {
-    z-index: 0;
-    position: absolute;
-    width: 1440px;
-    height: 89px;
-}
-
-
-footer .bar {
-    position: relative;
-    z-index: 2;
+    padding: 0 240px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 960px;
-    height: 34px;
-    padding: 28px 240px 27px;
     color: #fff;
+    background: url("assets/footer.png") rgba(35, 47, 56, 60%);
+    background-blend-mode: multiply;
 }
 
-footer .bar .links {
+footer .logo {
+    margin-top: 31px;
+}
+
+footer .links {
     display: flex;
     width: 640px;
     gap: 20px;
