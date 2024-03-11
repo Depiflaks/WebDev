@@ -1,0 +1,35 @@
+footer {
+    font-family: "Lora", serif;
+    width: 960px;
+    height: 89px;
+    padding: 0 240px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: #fff;
+    background: url("footer.png") rgba(35, 47, 56, 60%);
+    background-blend-mode: multiply;
+}
+
+.footer__logo {
+    margin-top: 31px;
+}
+
+.footer__links {
+    display: flex;
+    width: 640px;
+    gap: 20px;
+    justify-content: flex-end;
+    align-items: center;
+    text-transform: uppercase;
+     
+}
+
+.footer__links a {
+    font-family: 'Oxygen', sans-serif;
+    color: rgba(255, 255, 255, 60%);
+    font-size: 11px;
+    line-height: 26px;
+    letter-spacing: 1px;
+    text-decoration: none;
+}

@@ -1,0 +1,33 @@
+.heading {
+    padding: 110px 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.heading__caption {
+    font-family: "Lora", serif;
+    font-size: 50px;
+    line-height: 51px;
+    letter-spacing: 2px;
+    color: #fff;
+}
+
+.heading__sub-caption {
+    font-family: 'Oxygen', sans-serif;
+    font-size: 17px;
+    line-height: 20px;
+    color: #ffffffa0;
+    display: block;
+    margin-top: 20px;
+}
+
+.heading__button {
+    background-color: #dd783f;
+    border: none;
+    border-radius: 3px;
+    padding: 12px 31px;
+    color: #fff;
+    font-family: 'Oxygen', sans-serif;
+    margin-top: 31px;
+}

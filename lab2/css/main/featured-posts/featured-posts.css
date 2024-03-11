@@ -1,0 +1,97 @@
+.featured-posts {
+    margin-top: 23px;
+    display: grid;
+    grid-template-columns: 460px 460px;
+    column-gap: 20px;
+}
+
+.featured-posts__post {
+    display: flex;
+    flex-direction: column;
+    height: 245px;
+    padding: 20px 20px 15px;
+    border-radius: 3px;
+}
+
+.featured-posts__post:nth-child(1) {
+    background-image: url("road-ahead.png");
+}
+
+.featured-posts__post:nth-child(2) {
+    background-image: url("from-top-down.png");
+}
+
+.featured-posts__filter {
+    align-self: flex-start;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.featured-posts__filter li {
+    list-style-type: none;
+    padding: 6px 9px 7px;
+    text-transform: uppercase;
+    font-family: 'Oxygen', sans-serif;
+    font-size: 12px;
+    line-height: 13px;
+    letter-spacing: 0;
+    color: #fff;
+    background-color: #dd783f;
+    border-radius: 2px;
+}
+
+.featured-posts__post h1 {
+    display: block;
+    color: #fff;
+    font-family: "Lora", serif;
+    font-size: 27px;
+    line-height: 30px;
+    letter-spacing: 0;
+    margin-top: auto;
+    margin-bottom: 6px;
+}
+
+.featured-posts__post h2 {
+    display: block;
+    color: #ffffffb3;
+    font-family: 'Oxygen', sans-serif;
+    font-size: 14px;
+    line-height: 25px;
+    letter-spacing: 0;
+    margin-bottom: 12px;
+}
+
+
+.featured-posts__footer-bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.featured-posts__profile-picture {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+}
+
+.featured-posts__footer-bar p {
+    display: block;
+    margin-left: 10px;
+    color: #ffffffb3;
+    font-family: 'Oxygen', sans-serif;
+    font-size: 12px;
+    line-height: 35px;
+    letter-spacing: 0;
+}
+
+.featured-posts__footer-bar time {
+    display: block;
+    margin-left: auto;
+    color: #ffffffb3;
+    font-family: 'Oxygen', sans-serif;
+    font-size: 12px;
+    line-height: 35px;
+    letter-spacing: 0;
+}
