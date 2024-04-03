@@ -1,0 +1,24 @@
+main {
+    background-color: #f7f7f7;
+}
+
+.main__filter-bar {
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    gap: 21px;
+    padding: 9px 240px 10px;
+}
+
+.main__filter-bar a {
+    font-family: "Lora", serif;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0;
+    color: #768088;
+    text-decoration: none;
+    display: block;
+    width: 139px;
+    padding: 13px 0;
+    text-align: center;
+}

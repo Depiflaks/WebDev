@@ -1,0 +1,18 @@
+.post-group {
+    padding: 60px 250px 0;
+}
+
+.post-group__caption {
+    display: block;
+    font-family: 'Oxygen', sans-serif;
+    font-size: 20px;
+    line-height: 27px;
+    letter-spacing: 2px;
+    color: #2e2e2e;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 188px;
+    padding: 0 0 16px;
+    border-bottom: 1px solid #dedede;
+}

@@ -1,0 +1,35 @@
+header {
+    height: 483px;
+    background-image: url("header-background.jpg");
+}
+
+.header__bar {
+    padding: 0 250px;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.header__logo {
+    padding: 10px 0;
+    width: 92px;
+    height: 26px;
+}
+
+.header__links {
+    padding: 20px 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 40px
+}
+
+.header__links a {
+    font-size: 12px;
+    line-height: 20px;
+    font-family: 'Oxygen', sans-serif;
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: block;
+}
