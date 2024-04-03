@@ -83,7 +83,7 @@
         <div class="most-recent">
             <?php
             foreach ($posts as $post) {
-                require __DIR__ . "/PostPatterns/most-recent.php";
+                require __DIR__ . "/PostPatterns/MostRecent.php";
             }
             ?>
         </div>
