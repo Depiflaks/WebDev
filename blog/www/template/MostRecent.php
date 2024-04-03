@@ -4,7 +4,7 @@
     </div>
     <h1><?= $post['title']?></h1>
     <h2>
-        <a style="text-decoration: none; color: #7a7a7a;" title='<?= $post['title'] ?>' href='/post?id=<?= $post['id'] ?>'>
+        <a style="text-decoration: none; color: #7a7a7a;" title='<?= $post['title'] ?>' href='../post?id=<?= $post['id'] ?>'>
             <?= $post['subtitle'] ?>
         </a>
     </h2>
@@ -13,6 +13,6 @@
             <img src=<?= $post['author-url']?> alt="profile-picture">
         </div>
         <p><?= $post['author']?></p>
-        <time datetime="2015-09-25"><?= $post['publish-date']?></time>
+        <time datetime="2015-09-25"><?= date("Y-m-d", $post['publish-date'])?></time>
     </div>
 </div>

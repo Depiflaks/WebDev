@@ -98,7 +98,7 @@ footer {
     flex-direction: row;
     justify-content: space-between;
     color: #fff;
-    background: url("assets/footer.png") rgba(35, 47, 56, 60%);
+    background: url("../assets/footer.png") rgba(35, 47, 56, 60%);
     background-blend-mode: multiply;
 }
 
