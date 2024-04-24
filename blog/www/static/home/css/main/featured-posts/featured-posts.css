@@ -13,14 +13,6 @@
     border-radius: 3px;
 }
 
-.featured-posts__post:nth-child(1) {
-    background-image: url("road-ahead.png");
-}
-
-.featured-posts__post:nth-child(2) {
-    background-image: url("from-top-down.png");
-}
-
 .featured-posts__filter {
     align-self: flex-start;
     display: flex;

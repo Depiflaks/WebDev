@@ -1,61 +1,14 @@
 <?php
 
-$posts = [
-    [
-      'id' => 1,
-      'title' => 'Still Standing Tall',
-      'subtitle' => 'Life begins at the end of your comfort zone.',
-      'image-url' => 'static/home/assets/most-recent/still-standing-tall.jpg',
-      'author' => 'William Wong',
-      'author-url' => 'static/home/assets/profile-pictures/william-wong.png',
-      'publish-date' => 1443124800,
-    ],
-    [
-      'id' => 2,
-      'title' => 'Sunny Side Up',
-      'subtitle' => "No place is ever as bad as they tell you it's going to be.",
-      'image-url' => 'static/home/assets/most-recent/sunny-side-up.jpg',
-      'author' => 'Mat Vogels',
-      'author-url' => "static/home/assets/profile-pictures/mat-vogels.png",
-      'publish-date' => 1443124800,
-    ],
-    [
-      'id' => 3,
-      'title' => 'Water Falls',
-      'subtitle' => "We travel not to escape life, but for life not to escape us.",
-      'image-url' => 'static/home/assets/most-recent/water-falls.jpg',
-      'author' => 'Mat Vogels',
-      'author-url' => "static/home/assets/profile-pictures/mat-vogels.png",
-      'publish-date' => 1443124800,
-    ],
-    [
-      'id' => 4,
-      'title' => 'Through the Mist',
-      'subtitle' => "Travel makes you see what a tiny place you occupy in the world.",
-      'image-url' => 'static/home/assets/most-recent/through-mist.jpg',
-      'author' => 'William Wong',
-      'author-url' => 'static/home/assets/profile-pictures/william-wong.png',
-      'publish-date' => 1443124800,
-    ],
-    [
-      'id' => 5,
-      'title' => 'Awaken Early',
-      'subtitle' => "Not all those who wander are lost.",
-      'image-url' => 'static/home/assets/most-recent/awaken-early.jpg',
-      'author' => 'William Wong',
-      'author-url' => 'static/home/assets/profile-pictures/william-wong.png',
-      'publish-date' => 1443124800,
-    ],
-    [
-      'id' => 6,
-      'title' => 'Try it Always',
-      'subtitle' => "The world is a book, and those who do not travel read only one page.",
-      'image-url' => 'static/home/assets/most-recent/try-it-always.jpg',
-      'author' => 'Mat Vogels',
-      'author-url' => "static/home/assets/profile-pictures/mat-vogels.png",
-      'publish-date' => 1443124800,
-    ],
-];
+require_once "./src/Path/StaticPath.php";
+require_once "./src/Infrastructure/ConnectionProvider.php";
+require_once "./src/Model/PostTable.php";
+
+$conn = ConnectionProvider::connectDatabase();
+
+$table = new PostTable;
+
+var_dump($table->getMostRecentPosts($conn));
 ?>
 
 <!DOCTYPE html>
@@ -110,47 +63,24 @@ $posts = [
     <section class="post-group">
         <h2 class="post-group__caption">Featured Posts</h2>
         <div class="featured-posts">
-            <div class="featured-posts__post">
-                <ul class="featured-posts__filter"></ul>
-                <h1>The Road Ahead</h1>
-                <h2>The road ahead might be paved - it might not be</h2>
-                <div class="featured-posts__footer-bar">
-                    <div class="featured-posts__profile-picture">
-                        <img src="static/home/assets/profile-pictures/mat-vogels.png" alt="profile-picture">
-                    </div>
-                    <p>Mat Vogels</p>
-                    <time datetime="2015-09-25">September 25, 2015</time>
-                </div>
-            </div>
-            <div class="featured-posts__post">
-                <ul class="featured-posts__filter">
-                    <li>adventure</li>
-                </ul>
-                <h1>From Top Down</h1>
-                <h2>Once a year, go someplace you've never been before.</h2>
-                <div class="featured-posts__footer-bar">
-                    <div class="featured-posts__profile-picture">
-                        <img src="static/home/assets/profile-pictures/william-wong.png" alt="profile-picture">
-                    </div>
-                    <p>William Wong</p>
-                    <time datetime="2015-09-25">September 11, 2015</time>
-                </div>
-            </div>
+            <?php
+            foreach ($table->getFeaturedPosts($conn) as $post) {
+                include "./template/Featured.php";
+            }
+            ?>
         </div>
     </section>
     <section class="post-group">
         <h2 class="post-group__caption">Most Recent</h2>
         <div class="most-recent">
             <?php
-            foreach ($posts as $post) {
+            foreach ($table->getMostRecentPosts($conn) as $post) {
                 include "./template/MostRecent.php";
             }
             ?>
         </div>
         
     </section>
-    
-    
 </main>
 
 <footer>

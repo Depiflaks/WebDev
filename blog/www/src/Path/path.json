@@ -1,0 +1,7 @@
+{
+    "static": "./static/",
+    "background-most-recent": "home/assets/most-recent/",
+    "background-featured": "home/assets/featured-posts/",
+    "hero": "post/assets/",
+    "profile-picture": "home/assets/profile-pictures/"
+}
