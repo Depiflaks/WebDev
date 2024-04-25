@@ -8,7 +8,6 @@ $conn = ConnectionProvider::connectDatabase();
 
 $table = new PostTable;
 
-var_dump($table->getMostRecentPosts($conn));
 ?>
 
 <!DOCTYPE html>
@@ -85,7 +84,7 @@ var_dump($table->getMostRecentPosts($conn));
 
 <footer>
     <div class="footer__logo">
-        <img src="assets/logo-footer.svg" alt="logo-footer">
+        <img src="static/home/assets/logo-footer.svg" alt="logo-footer">
     </div>
     <div class="footer__links">
         <a href="">home</a>

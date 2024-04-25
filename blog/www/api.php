@@ -7,6 +7,8 @@ require_once "./src/Model/PostTable.php";
 $conn = ConnectionProvider::connectDatabase();
 $table = new PostTable;
 
+# дописать, чтобы работало
+
 $picture_name = "image" . $table->getMaxId($conn)["MAX(`post_id`)"] + 1;
 
 function saveImage(string $imageBase64) {

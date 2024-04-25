@@ -2,10 +2,10 @@
 
 $jsonData = json_decode(file_get_contents(__DIR__ . '/path.json'), true);
 
-$STATIC = $jsonData["static"];
-$MOST_RECENT = $jsonData["background-most-recent"];
-$FEATURED = $jsonData["background-featured"];
-$HERO = $jsonData["hero"];
-$PROFILE = $jsonData["profile-picture"];
+const STATIC_PATH = "./static/";
+const MOST_RECENT = "home/assets/most-recent/";
+const FEATURED = "home/assets/featured-posts/";
+const HERO = "post/assets/";
+const PROFILE = "home/assets/profile-pictures/";
 
 ?>
