@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Escape.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora&family=Oxygen:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/admin/css/style.css">
+    <link rel="stylesheet" href="static/admin/css/header/header.css">
+</head>
+
+<body>
+
+<header>
+    <div class="header__logo">
+        <img src="static/admin/assets/header_logo.svg" alt="logo-header">
+    </div>
+    <nav class="header__links">
+        <a href="" class="header__user">S</a>
+        <a href="" class="header__log-out">
+            <img src="./static/admin/assets/logOut.svg">
+        </a>
+    </nav>
+</header>
+
+<main>
+<form>
+    <article class="bar">
+        <div class="bar__caption">
+            <h1>New Post</h1>
+            <p>Fill out the form bellow and publish your article</p>
+        </div>
+        <button class="bar__button">Publish</button>
+    </article>
+    <article class="alert">
+
+    </article>
+    <article class="information">
+        <h2>Main Information</h2>
+        <section class="information__form">
+            
+            <!--    Title    -->
+            <div class="input-block"> 
+                <label for="title-input" class="input-block__caption">Title</label>
+                <input type="text" id="title-input" class="input-block__text-area" placeholder="Hello, World!">
+                <label for="title-input" class="information__tip"></label>
+            </div>
+            <!--    Short description    -->
+            <div class="input-block"> 
+                <label for="subtitle-input" class="input-block__caption">Short description</label>
+                <input type="text" id="subtitle-input" class="input-block__text-area" placeholder="Let`s get it started!">
+                <label for="subtitle-input" class="information__tip"></label>
+            </div>
+            <!--    Author Name    -->
+            <div class="input-block"> 
+                <label for="author-input" class="input-block__caption">Author Name</label>
+                <input type="text" id="author-input" class="input-block__text-area">
+                <label for="author-input" class="information__tip"></label>
+            </div>
+            <!--    Author Photo    -->
+            <div class="input-block"> 
+                <label for="author-photo-input" class="input-block__caption">Author Photo</label>
+                <!-- Доделать -->
+                <label for="author-photo-input" class="information__tip"></label>
+            </div>
+            <!--    Publish Date    -->
+            <div class="input-block"> 
+                <label for="date-input" class="input-block__caption">Publish Date</label>
+                <input type="date" id="date-input" class="input-block__date">
+                <label for="date-input" class="information__tip"></label>
+            </div>
+            <!--    Hero Image    -->
+            <div class="input-block"> 
+                <label for="hero-image-input" class="input-block__caption">Hero Image</label>
+                <!-- Доделать -->
+                <label for="hero-image-input" class="information__tip"></label>
+            </div>
+            <!--    Sub-Hero Image    -->
+            <div class="input-block"> 
+                <label for="sub-hero-image-input" class="input-block__caption">Hero Image</label>
+                <!-- Доделать -->
+                <label for="sub-hero-image-input" class="information__tip"></label>
+            </div>
+        </section>
+        <section class="information__preview"> 
+            <!--    Article preview    -->
+            <h3>Article preview</h3>
+            <div class="information__article-preview">
+                <h2></h2>
+                <h3></h3>
+                <img>
+            </div>
+            <!--    Post card preview    -->
+            <h3>Post card preview</h3>
+            <div class="most-recent__post">
+                <div class="most-recent__background-picture">
+                    <img src="" alt="background-image">
+                </div>
+                <h1></h1>
+                <h2></h2>
+                <div class="most-recent__footer-bar">
+                    <div class="most-recent__profile-picture">
+                        <img src="" alt="profile-picture">
+                    </div>
+                    <p></p>
+                    <time datetime="2015-09-25"></time>
+                </div>
+            </div>
+        </section>
+    </article>
+
+    <article class="content">
+         <h2>Content</h2>
+         <!--    Post content    -->
+         <div class="input-block"> 
+            <label for="content-input" class="input-block__caption">Post content (plain text)</label>
+            <input type="text" id="content-input" class="input-block__text-area">
+            <label for="content-input" class="information__tip"></label>
+        </div>
+    </article>
+</form>
+</main>
+
+<footer>
+
+</footer>
+
+</body>
+
+</html>
