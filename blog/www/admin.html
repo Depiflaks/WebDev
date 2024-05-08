@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="static/home/css/main/most-recent/most-recent.css">
     <link rel="stylesheet" href="static/admin/css/main/input-block/input-block.css">
     <link rel="stylesheet" href="static/admin/css/main/content/content.css">
+    <link rel="stylesheet" href="static/admin/css/main/alert/alert.css">
 
 </head>
 
@@ -40,13 +41,15 @@
         </div>
         <button class="bar__button">Publish</button>
     </article>
-    <article class="alert">
-
+    <article class="alert hidden">
+        <div class="alert__icon">
+            <img id="alert-icon" src="./static/admin/assets/alert-circle.svg">
+        </div>
+        <p>Whoops! Some fields need your attention :o</p>
     </article>
     <article class="information">
         <h2>Main Information</h2>
         <section class="information__form">
-            
             <!--    Title    -->
             <div class="input-block"> 
                 <label for="title-input" class="input-block__caption">Title</label>

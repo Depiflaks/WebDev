@@ -1,0 +1,34 @@
+.alert {
+    padding: 10px 12px;
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.alert p {
+    font-family: 'Oxygen', sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    color: #2e2e2e;
+}
+.alert__icon {
+    height: 24px;
+}
+
+.alert_error {
+    border-left: solid #E86961 2px;
+    background-color: #FFEBEA;
+}
+
+.alert_complete {
+    border-left: solid #67C38C 2px;
+    background-color: #E6FCEF;
+}
+
+.hidden {
+    display: none;
+}
