@@ -8,13 +8,14 @@ header {
 
 .header__logo {
     width: 132px;
-    padding: 7px 0;
+    align-self: flex-end;
 }
 
 .header__links {
     display: flex;
     flex-direction: row; 
     align-items: center;
+    gap: 16px;
 } 
 
 .header__links a {
@@ -29,6 +30,8 @@ header {
     font-size: 16px;
     line-height: 24px;
 
+    text-align: center;
+
     color: #fff;
     text-decoration: none;
     border-radius: 50%;
@@ -36,5 +39,5 @@ header {
 }
 
 .header__log-out {
-
+    height: 40px;
 }

@@ -1,0 +1,39 @@
+.bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 32px;
+}
+
+.bar__caption {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.bar__caption h1 {
+    font-family: "Lora", serif;
+    font-size: 34px;
+    line-height: 40px;
+    color: #000;
+}
+
+.bar__caption p {
+    font-family: 'Oxygen', sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    color: rgba(46, 46, 46, 63);
+}
+
+.bar__button {
+    padding: 12px 24px;
+    border-radius: 3px;
+    border: none;
+    background-color: #dd783f;
+
+    color: #fff;
+    font-family: 'Oxygen', sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+}

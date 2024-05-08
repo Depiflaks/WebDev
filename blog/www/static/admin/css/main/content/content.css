@@ -1,0 +1,13 @@
+.content {
+    margin-top: 16px;
+    background-color: #fff;
+    padding: 40px 40px 56px;
+}
+
+.content h2 {
+    font-family: "Lora", serif;
+    font-size: 27px;
+    line-height: 30px;
+    color: #000;
+    margin-bottom: 40px;
+}
