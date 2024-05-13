@@ -51,28 +51,28 @@
         <h2>Main Information</h2>
         <section class="information__form">
             <!--    Title    -->
-            <div class="input-block"> 
+            <div class="input-block" id="title-block"> 
                 <label for="title-input" class="input-block__caption">Title</label>
                 <input type="text" id="title-input" class="input-block__text-area" placeholder="Hello, World!">
                 <label for="title-input" class="input-block__tip"></label>
             </div>
             <!--    Short description    -->
-            <div class="input-block"> 
+            <div class="input-block" id="description-block"> 
                 <label for="subtitle-input" class="input-block__caption">Short description</label>
                 <input type="text" id="subtitle-input" class="input-block__text-area" placeholder="Let`s get it started!">
                 <label for="subtitle-input" class="input-block__tip"></label>
             </div>
             <!--    Author Name    -->
-            <div class="input-block"> 
+            <div class="input-block" id="name-block"> 
                 <label for="author-input" class="input-block__caption">Author Name</label>
                 <input type="text" id="author-input" class="input-block__text-area">
                 <label for="author-input" class="input-block__tip"></label>
             </div>
             <!--    Author Photo    -->
-            <div class="input-block"> 
+            <div class="input-block" id="avatar-block"> 
                 <label for="author-img-input" class="input-block__caption">Author Photo</label>
                 <div class="input-block__img-block">
-                    <div class="input-block__avatar input-block__avatar_none">
+                    <div class="input-block__avatar">
                         <img src="static/admin/assets/upload_photo.svg">
                     </div>
                     <label class="input-block__img-input">
@@ -89,16 +89,17 @@
                 <label for="author-img-input" class="input-block__tip"></label>
             </div>
             <!--    Publish Date    -->
-            <div class="input-block"> 
+            <div class="input-block" id="date-block"> 
                 <label for="date-input" class="input-block__caption">Publish Date</label>
                 <input type="date" id="date-input" class="input-block__date">
                 <label for="date-input" class="input-block__tip"></label>
             </div>
             <!--    Hero Image    -->
-            <div class="input-block"> 
+            <div class="input-block" id="hero-block"> 
                 <label for="hero-img-input-2" class="input-block__caption">Hero Image</label>
                 <div class="input-block__img-block">
                     <div class="input-block__hero-img input-block__hero-img_none">
+                        <img>
                         <label class="input-block__img-input">
                             <input type="file" id="hero-img-input-1">
                             <img src="static/admin/assets/upload_photo.svg">
@@ -122,10 +123,11 @@
                 <label for="hero-img-input-2" class="input-block__tip"></label>
             </div>
             <!--    Sub-Hero Image    -->
-            <div class="input-block"> 
+            <div class="input-block" id="sub-hero-block"> 
                 <label for="sub-hero-img-input-2" class="input-block__caption">Hero Image</label>
                 <div class="input-block__img-block">
-                    <div class="input-block__sub-hero-img input-block__sub-hero-img_none">
+                    <div class="input-block__hero-img input-block__hero-img_sub input-block__hero-img_none">
+                        <img>
                         <label class="input-block__img-input">
                             <input type="file" id="sub-hero-img-input-1">
                             <img src="static/admin/assets/upload_photo.svg">
@@ -173,7 +175,7 @@
                             <img src="">
                         </div>
                         <p>Enter author name</p>
-                        <time datetime="2015-09-25">04/19/2024</time>
+                        <time datetime="2015-09-25">2024-19-04</time>
                     </div>
                 </div>
             </div>
@@ -183,7 +185,7 @@
     <article class="content">
          <h2>Content</h2>
          <!--    Post content    -->
-         <div class="input-block"> 
+         <div class="input-block" id="content-block"> 
             <label for="content-input" class="input-block__caption">Post content (plain text)</label>
             <textarea id="content-input" class="input-block__content-area" placeholder="Type anyting you want ..."></textarea>
             <label for="content-input" class="input-block__tip"></label>
