@@ -1,7 +1,6 @@
 const article_preview = document.querySelector(".information__article-preview");
 const post_card_preview = document.querySelector(".information__post-card-preview");
 
-
 class TextInput {
     constructor(element) {
         this.element = element;
@@ -247,14 +246,13 @@ class ImageInput {
         this.areaImage.classList.add("hidden");
         this.areaImage.src = "";
 
-        article_preview.querySelector("img").classList.add("hidden");
-        post_card_preview.querySelector(".most-recent__background-picture img").classList.add("hidden");
-
         switch (this.element.id) {
             case "hero-block":
+                article_preview.querySelector("img").classList.add("hidden");
                 article_preview.querySelector("img").src = "";
                 break;
             case "sub-hero-block":
+                post_card_preview.querySelector(".most-recent__background-picture img").classList.add("hidden");
                 post_card_preview.querySelector(".most-recent__background-picture img").src = "";
                 break;
         }
@@ -282,6 +280,8 @@ const title = new TextInput(document.querySelector("#title-block"));
 const description = new TextInput(document.querySelector("#description-block"));
 const author_name = new TextInput(document.querySelector("#name-block"));
 const content = new TextArea(document.querySelector("#content-block"));
+
+const featured = document.getElementById("checkbox-input");
 
 const author_photo = new AvatarInput(document.querySelector("#avatar-block"));
 
@@ -313,7 +313,7 @@ function alertComplete() {
 function updateValues() {
     for (let i = 0; i < text_inputs.length; i++) {
         text_inputs[i].update();
-        console.log(text_inputs[i].value);
+        //console.log(text_inputs[i].value);
     }
 }
 
@@ -365,18 +365,26 @@ function onSubmit(event) {
 
     const form_data = {
         title: title.value,
-        description: description.value,
-        author_name: author_name.value,
-        content: content.value,
-        date: date.value,
-        hero_image: hero_image.imageUrl,
-        sub_hero_image: sub_hero_image.imageUrl,
-        author_photo: author_photo.imageUrl
+        subtitle: description.value,
+        author: author_name.value,
+        contents: content.value,
+        publish_date: date.value,
+        background_url: hero_image.imageUrl,
+        hero_url: sub_hero_image.imageUrl,
+        author_url: author_photo.imageUrl,
+        featured: featured.checked ? 1 : 0,
     };
     
     const json_data = JSON.stringify(form_data);
 
     console.log(json_data);
+    fetch('http://localhost:8001/api.php', {
+        method: 'POST',
+        body: json_data
+    })
+    .then(response => {
+        console.log(response);
+    });
 }
 
 

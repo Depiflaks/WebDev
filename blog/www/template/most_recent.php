@@ -13,6 +13,6 @@
             <img src=<?= STATIC_PATH . PROFILE . $post['author_url']?> alt="profile-picture">
         </div>
         <p><?= $post['author']?></p>
-        <time datetime="2015-09-25"><?= $post['publish_date']?></time>
+        <time datetime="2015-09-25"><?= explode(" ", $post['publish_date'])[0]?></time>
     </div>
 </div>

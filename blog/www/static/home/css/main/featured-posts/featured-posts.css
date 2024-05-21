@@ -1,11 +1,14 @@
 .featured-posts {
-    margin-top: 23px;
+    margin: 23px auto 0;
     display: grid;
     grid-template-columns: 460px 460px;
     column-gap: 20px;
+    row-gap: 20px;
+    max-width: 940px;
 }
 
 .featured-posts__post {
+    background-size: cover;
     display: flex;
     flex-direction: column;
     height: 245px;
@@ -68,6 +71,12 @@
     border-radius: 50%;
 }
 
+.featured-posts__profile-picture img {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+}
+
 .featured-posts__footer-bar p {
     display: block;
     margin-left: 10px;
@@ -86,4 +95,18 @@
     font-size: 12px;
     line-height: 35px;
     letter-spacing: 0;
+}
+
+@media screen and (max-width: 975px) {
+    .featured-posts {
+        max-width: 95%;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 485px) {
+    .featured-posts {
+        max-width: 85%;
+        grid-template-columns: 1fr;
+    }
 }

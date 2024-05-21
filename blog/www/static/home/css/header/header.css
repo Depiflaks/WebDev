@@ -1,20 +1,25 @@
 header {
-    height: 483px;
     background-image: url("header-background.jpg");
+    background-size: cover;
 }
 
 .header__bar {
-    padding: 0 250px;
+    margin: 0 auto;
     height: 40px;
+    max-width: 940px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
 .header__logo {
-    padding: 10px 0;
+    padding: 15px;
     width: 92px;
     height: 26px;
+}
+
+#header-menu {
+    display: none;
 }
 
 .header__links {
@@ -32,4 +37,29 @@ header {
     text-transform: uppercase;
     text-decoration: none;
     display: block;
+}
+
+@media screen and (max-width: 940px) {
+    .header__bar {
+        max-width: 100%;
+        
+    }
+
+    .header__logo {
+        padding: 15px;
+    }
+
+    #header-menu {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header__links a {
+        display: none;
+    }
+
+    #header-menu {
+        display: block;
+    }
 }

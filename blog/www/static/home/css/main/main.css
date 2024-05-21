@@ -6,8 +6,9 @@ main {
     background-color: #fff;
     display: flex;
     flex-direction: row;
+    justify-content: center;
     gap: 21px;
-    padding: 9px 240px 10px;
+    padding: 9px 0 10px;
 }
 
 .main__filter-bar a {
@@ -21,4 +22,24 @@ main {
     width: 139px;
     padding: 13px 0;
     text-align: center;
+}
+
+@media screen and (max-width: 950px) {
+    .main__filter-bar {
+        gap: 0;
+    }
+
+    .main__filter-bar a {
+        width: 100px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .main__filter-bar {
+        flex-wrap: wrap;
+    }
+
+    .main__filter-bar a {
+        width: 33%;
+    }
 }

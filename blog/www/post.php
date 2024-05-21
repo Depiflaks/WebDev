@@ -13,9 +13,9 @@ require_once "./src/Model/PostTable.php";
 
 $conn = ConnectionProvider::connectDatabase();
 
-$table = new PostTable;
+$table = new PostTable($conn);
 
-$data = $table->getPostById($conn, $id);
+$data = $table->getPostById($id);
 ?>
 
 
@@ -33,24 +33,27 @@ $data = $table->getPostById($conn, $id);
 
 <body>
 <div class="container">
+
     <header>
         <div class="logo">
             <img src="static/post/assets/logo-header.svg">
         </div>
         <div class="links">
+            <a id="menu">menu</a>
             <a>home</a>
             <a>categories</a>
             <a>about</a>
             <a>contact</a>
         </div>
     </header>
+
     <main>
         <section class="heading">
             <div class="main-title"><?= $data['title']?></div>
             <div class="sub-title"><?= $data['subtitle']?></div>
         </section>
         <div class="body-image">
-            <img src=<?= $STATIC . $HERO . $data['background_url']?> alt="mountains image">
+            <img src=<?= STATIC_PATH . HERO . $data['background_url']?> alt="mountains image">
         </div>
         <section class="main-text">
             <p>

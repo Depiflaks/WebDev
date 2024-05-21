@@ -6,8 +6,8 @@ require_once "./src/Model/PostTable.php";
 
 $conn = ConnectionProvider::connectDatabase();
 
-$table = new PostTable;
-
+$table = new PostTable($conn);
+//var_dump($table->getFeaturedPosts());
 ?>
 
 <!DOCTYPE html>
@@ -16,6 +16,7 @@ $table = new PostTable;
 <head>
     <meta charset="utf-8">
     <title>Escape.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora&family=Oxygen:wght@300;400&display=swap" rel="stylesheet">
@@ -36,7 +37,11 @@ $table = new PostTable;
         <div class="header__logo">
             <img src="static/home/assets/logo-header.svg" alt="logo-header">
         </div>
+
         <nav class="header__links">
+            <a href="" id="header-menu">
+                menu
+            </a>
             <a href="">home</a>
             <a href="">categories</a>
             <a href="">about</a>
@@ -63,8 +68,8 @@ $table = new PostTable;
         <h2 class="post-group__caption">Featured Posts</h2>
         <div class="featured-posts">
             <?php
-            foreach ($table->getFeaturedPosts($conn) as $post) {
-                include "./template/Featured.php";
+            foreach ($table->getFeaturedPosts() as $post) {
+                include "./template/featured.php";
             }
             ?>
         </div>
@@ -73,8 +78,8 @@ $table = new PostTable;
         <h2 class="post-group__caption">Most Recent</h2>
         <div class="most-recent">
             <?php
-            foreach ($table->getMostRecentPosts($conn) as $post) {
-                include "./template/MostRecent.php";
+            foreach ($table->getMostRecentPosts() as $post) {
+                include "./template/most_recent.php";
             }
             ?>
         </div>
@@ -83,15 +88,18 @@ $table = new PostTable;
 </main>
 
 <footer>
-    <div class="footer__logo">
-        <img src="static/home/assets/logo-footer.svg" alt="logo-footer">
+    <div class="footer__bar">
+        <div class="footer__logo">
+            <img src="static/home/assets/logo-footer.svg" alt="logo-footer">
+        </div>
+        <div class="footer__links">
+            <a href="">home</a>
+            <a href="">categories</a>
+            <a href="">about</a>
+            <a href="">contact</a>
+        </div>
     </div>
-    <div class="footer__links">
-        <a href="">home</a>
-        <a href="">categories</a>
-        <a href="">about</a>
-        <a href="">contact</a>
-    </div>
+    
 </footer>
 
 </body>
