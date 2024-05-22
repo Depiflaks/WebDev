@@ -52,6 +52,6 @@ footer {
     .footer__links {
         padding: 15px 0;
         flex-direction: column;
-        gap: 10px;
+        gap: 0;
     }
 }

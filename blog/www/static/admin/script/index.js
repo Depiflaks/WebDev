@@ -380,6 +380,7 @@ function onSubmit(event) {
     console.log(json_data);
     fetch('http://localhost:8001/api.php', {
         method: 'POST',
+        headers: {},
         body: json_data
     })
     .then(response => {

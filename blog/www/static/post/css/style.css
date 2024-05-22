@@ -9,8 +9,12 @@ body {
     background-color: black;
 }
 
+#menu {
+    display: none;
+}
+
 .container {
-    max-width: 1440px;
+    width: 100%;
     margin: auto;
     background-color: #f7f7f7;
 }
@@ -39,7 +43,7 @@ header .links {
 }
 
 header .logo {
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .links a {
@@ -56,8 +60,8 @@ header .logo {
 
 .main-title {
     margin: 82px auto 0;
-    width: 498px;
-    height: 51px;
+    width: 80%;
+    text-align: center;
     font-size: 50px;
     color: #2e2e2e;
     line-height: 51px;
@@ -68,8 +72,8 @@ header .logo {
     font-family: 'Oxygen', sans-serif;
     margin: 20px auto 0;
     color: rgba(46, 46, 46, 63%);
-    width: 504px;
-    height: 20px;
+    width: 80%;
+    text-align: center;
     font-size: 17px;
     line-height: 20px;
     letter-spacing: 0%;
@@ -77,8 +81,11 @@ header .logo {
 
 .body-image {
     width: 100%;
-    height: 534px;
     margin-top: 113px;
+}
+
+.body-image img {
+    width: 100%;
 }
 
 .main-text {
@@ -91,22 +98,27 @@ header .logo {
 
 footer {
     font-family: "Lora", serif;
-    width: 960px;
     height: 89px;
-    padding: 0 240px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     color: #fff;
     background: url("../assets/footer.png") rgba(35, 47, 56, 60%);
+    background-size: cover;
     background-blend-mode: multiply;
 }
 
-footer .logo {
+.footer__bar {
+    max-width: 960px;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.footer__bar .logo {
     margin-top: 31px;
 }
 
-footer .links {
+.footer__bar .links {
     display: flex;
     width: 640px;
     gap: 20px;
@@ -118,4 +130,64 @@ footer .links {
     font-size: 11px;
     line-height: 26px;
     letter-spacing: 1px;
+}
+
+@media screen and (max-width: 1080px) {
+    footer {
+        padding: 0 17px;
+    }
+
+    header .links {
+        justify-content: flex-end;
+    }
+
+    header .links a {
+        display: none;
+    }
+
+    #menu {
+        display: block;
+    }
+
+    header {
+        padding: 17px 0;
+        max-width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .body-image {
+        overflow: hidden;
+    }
+
+    .body-image img {
+        width: auto;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .main-text {
+        padding: 140px 0 135px;
+        max-width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .footer__bar .logo {
+        margin-left: 10px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    footer {
+        height: auto;
+    }
+
+    .footer__bar .links {
+        padding-top: 10px;
+        flex-direction: column;
+        align-items: center;
+        width: auto;
+        gap: 0;
+    }
 }

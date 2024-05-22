@@ -40,7 +40,7 @@ $table = new PostTable($conn);
 
         <nav class="header__links">
             <a href="" id="header-menu">
-                menu
+                <img src="./static/home/assets/burger.svg">
             </a>
             <a href="">home</a>
             <a href="">categories</a>

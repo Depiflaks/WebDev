@@ -39,7 +39,9 @@ $data = $table->getPostById($id);
             <img src="static/post/assets/logo-header.svg">
         </div>
         <div class="links">
-            <a id="menu">menu</a>
+            <a id="menu">
+                <img src="./static/post/assets/burger.svg">
+            </a>
             <a>home</a>
             <a>categories</a>
             <a>about</a>
@@ -62,14 +64,16 @@ $data = $table->getPostById($id);
         </section>
     </main>
     <footer>
-        <div class="logo">
-            <img src="static/post/assets/logo-footer.svg">
-        </div>
-        <div class="links">
-            <a>home</a>
-            <a>categories</a>
-            <a>about</a>
-            <a>contact</a>
+        <div class="footer__bar">
+            <div class="logo">
+                <img src="static/post/assets/logo-footer.svg">
+            </div>
+            <div class="links">
+                <a>home</a>
+                <a>categories</a>
+                <a>about</a>
+                <a>contact</a>
+            </div>
         </div>
     </footer>
 </div>

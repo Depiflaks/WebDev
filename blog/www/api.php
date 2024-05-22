@@ -15,7 +15,6 @@ function saveImage(string $imageBase64, string $path, string $name): string
     $imgExtention = str_replace('data:image/', '', $imageBase64Array[0]);
     $imageDecoded = base64_decode($imageBase64Array[1]);
     $file_dir = $path . $name . ".{$imgExtention}";
-    //echo $file_dir, "\n";
     $file = fopen($file_dir, 'wb');
     if ($file) {
         fwrite($file, $imageDecoded);
@@ -29,21 +28,21 @@ function saveImage(string $imageBase64, string $path, string $name): string
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $body = json_decode(file_get_contents("php://input"), true);
     if ($body) {
-        $home_path = STATIC_PATH . ($body["featured"] ? FEATURED : MOST_RECENT);
-        $page_path = STATIC_PATH . HERO;
-        $avatar_path = STATIC_PATH . PROFILE;
-        $id = $table->saveData($body);
-        
-        // saving background images
-        $hero = saveImage($body["background_url"], $home_path, "hero{$id}");
-        saveImage($body["hero_url"], $page_path, "hero{$id}");
-        $avatar = saveImage($body["author_url"], $avatar_path, "avatar{$id}");
-        echo $hero, $avatar;
-        $table->addImagesUrl($hero, $avatar, $id);
-        http_response_code(200);
+       $home_path = STATIC_PATH . ($body["featured"] ? FEATURED : MOST_RECENT);
+       $page_path = STATIC_PATH . HERO;
+       $avatar_path = STATIC_PATH . PROFILE;
+       $id = $table->saveData($body);
+       
+       // saving background images
+       $hero = saveImage($body["background_url"], $home_path, "hero{$id}");
+       saveImage($body["hero_url"], $page_path, "hero{$id}");
+       $avatar = saveImage($body["author_url"], $avatar_path, "avatar{$id}");
+       echo $hero, $avatar;
+       $table->addImagesUrl($hero, $avatar, $id);
+       http_response_code(200);
     } else {
-        echo "something's going wrong";
-        http_response_code(550);
+       echo "something's going wrong";
+       http_response_code(500);
     }
 }
 ?>
