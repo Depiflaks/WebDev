@@ -3,10 +3,13 @@
 require_once "./src/Path/StaticPath.php";
 require_once "./src/Infrastructure/ConnectionProvider.php";
 require_once "./src/Model/PostTable.php";
+require_once "./src/Controller/UserController.php";
 
+session_start();
 $conn = ConnectionProvider::connectDatabase();
 $table = new PostTable($conn);
 
+$controller = new UserController($table);
 //var_dump(file_put_contents("./uploads/data.txt", "123321\n"), 1);
 
 function saveImage(string $imageBase64, string $path, string $name): string
@@ -25,7 +28,7 @@ function saveImage(string $imageBase64, string $path, string $name): string
     return $name . ".{$imgExtention}";
 }
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $controller->authByCookie()) {
     $body = json_decode(file_get_contents("php://input"), true);
     if ($body) {
        $home_path = STATIC_PATH . ($body["featured"] ? FEATURED : MOST_RECENT);

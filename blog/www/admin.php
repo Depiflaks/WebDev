@@ -1,5 +1,37 @@
 <?php
 
+require_once "./src/Controller/UserController.php";
+require_once "./src/Path/StaticPath.php";
+require_once "./src/Infrastructure/ConnectionProvider.php";
+require_once "./src/Model/PostTable.php";
+
+function getColorByFirstLetter($letter) {
+    $colors = array(
+        'a' => '#FF5733', 'b' => '#33FF57', 'c' => '#3357FF', 'd' => '#F333FF', 'e' => '#FF33B8',
+        'f' => '#FF8C33', 'g' => '#33FFC1', 'h' => '#337BFF', 'i' => '#FF3333', 'j' => '#33FF8C',
+        'k' => '#8C33FF', 'l' => '#FF33F5', 'm' => '#FF5733', 'n' => '#33FF57', 'o' => '#3357FF',
+        'p' => '#F333FF', 'q' => '#FF33B8', 'r' => '#FF8C33', 's' => '#33FFC1', 't' => '#337BFF',
+        'u' => '#8C33FF', 'v' => '#33FF8C', 'w' => '#8C33FF', 'x' => '#FF33F5', 'y' => '#FF5733',
+        'z' => '#33FF57'
+    );
+
+    $letter = strtolower($letter);
+
+    return $colors[$letter] ?? '#FFFFFF';
+}
+
+session_start();
+$conn = ConnectionProvider::connectDatabase();
+$table = new PostTable($conn);
+$controller = new UserController($table);
+
+if (!$controller->authByCookie()) {
+    exit();
+}
+
+$letter = $_SESSION["email"][0];
+$color = getColorByFirstLetter($_SESSION["email"][0]);
+
 ?>
 
 <!DOCTYPE html>
@@ -28,16 +60,18 @@
         <img src="static/admin/assets/header_logo.svg" alt="logo-header">
     </div>
     <nav class="header__links">
-        <a href="" class="header__user">S</a>
-        <a href="" class="header__log-out">
-            <img src="./static/admin/assets/logOut.svg">
-        </a>
+        <a href="" class="header__user" style="background-color: <?=$color?>"><?=$letter?></a>
+        <form id="logout-form">
+            <button type="submit" class="header__log-out">
+                <img src="./static/admin/assets/logOut.svg">
+            </button>
+        </form>
         
     </nav>
 </header>
 
 <main>
-<form>
+<form id="main-form">
     <article class="bar">
         <div class="bar__caption">
             <h1>New Post</h1>

@@ -1,0 +1,12 @@
+.heading {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.heading p {
+    font-family: 'Oxygen', sans-serif;
+    font-size: 17px;
+    line-height: 25px;
+    color: #fff;
+}

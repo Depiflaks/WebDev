@@ -37,7 +37,7 @@ class PostTable
         return $result->fetch_assoc();
     }
 
-    public function saveData($param): int
+    public function saveData(array $param): int
     {
         $sql = 'INSERT INTO post 
         (title, subtitle, author, publish_date, background_url, author_url, featured, contents) 
@@ -56,13 +56,22 @@ class PostTable
 
     public function addImagesUrl(string $hero, string $avatar, int $id): void
     {
-        $sql = "UPDATE post SET background_url='{$hero}', author_url='{$avatar}' 
-        WHERE post_id={$id};";
-        echo $sql;
-        $this->connection->query($sql);
+        $sql = "UPDATE post SET background_url=?, author_url=? 
+        WHERE post_id=?;";
+        $stmt = $this->connection->prepare($sql);
+        $stmt->bind_param("ssi", $hero, $avatar, $id);
+        $stmt->execute();
     }
 
-    public function getMaxId() {
-        return (int)$this->connection->insert_id;
+    public function findUserByEmail(string $email): ?array
+    {
+        $sql = "SELECT * FROM user WHERE email = ?";
+        $stmt = $this->connection->prepare($sql);
+        $stmt->bind_param("s", $email);
+        if (!$stmt->execute()) {
+            return [];
+        }
+        $result = $stmt->get_result()->fetch_assoc();
+        return ($result) ? ($result) : [];
     }
 }

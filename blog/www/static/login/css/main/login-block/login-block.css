@@ -1,0 +1,29 @@
+.login-block {
+    padding: 56px 40px 0;
+    background-color: #fff;
+    border-radius: 3px;
+    width: 20%;
+    height: 560px;
+}
+
+.login-block h1 {
+    font-family: "Lora", serif;
+    font-size: 34px;
+    line-height: 40px;
+    color: #000;
+    margin-bottom: 60px;
+}
+
+.tip-showen {
+    margin-bottom: 0;
+}
+
+.login-block__form {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.login-block__form button {
+    width: 40%;
+}

@@ -7,6 +7,9 @@
     gap: 10px;
     align-items: center;
     margin-bottom: 16px;
+    transition: height 0.3s ease, opacity 0.3s ease;
+    height: 0;
+    opacity: 0;
 }
 
 .alert p {
@@ -29,6 +32,12 @@
     background-color: #E6FCEF;
 }
 
-.hidden {
-    display: none;
+.alert.hidden {
+    height: 0;
+    opacity: 0;
+}
+
+.alert.show {
+    height: auto;
+    opacity: 1;
 }

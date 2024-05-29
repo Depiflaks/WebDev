@@ -269,7 +269,8 @@ class ImageInput {
 
 const text_input_tests = [""];
 
-const form = document.querySelector("form");
+const main_form = document.querySelector("#main-form");
+const logout_form = document.querySelector("#logout-form");
 const input_list = document.querySelectorAll('.input-block');
 const alertBlock = {
     img: document.querySelector("#alert-icon"),
@@ -388,6 +389,20 @@ function onSubmit(event) {
     });
 }
 
+function onLogOut(event) {
+    event.preventDefault();
+    fetch('http://localhost:8001/api/logout.php', {
+        method: 'POST',
+        headers: {},
+        body: [],
+    }).then(response => {
+        if (response.ok) {
+            window.location.href = "http://localhost:8001/home.php";
+        }
+    });
+}
 
-form.addEventListener("submit", onSubmit)
 
+main_form.addEventListener("submit", onSubmit);
+
+logout_form.addEventListener("submit", onLogOut);

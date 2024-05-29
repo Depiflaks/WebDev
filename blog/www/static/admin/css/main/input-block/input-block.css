@@ -236,3 +236,15 @@
 .hidden {
     display: none;
 }
+
+.hide-password {
+    font-family: 'password';
+    -webkit-text-security: disc;
+    font-size: 20px;
+}
+
+.input-block__hide-switch {
+    position: relative;
+    top: -36px;
+    left: 90%;
+}

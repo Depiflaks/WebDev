@@ -5,7 +5,6 @@ require_once "./src/Infrastructure/ConnectionProvider.php";
 require_once "./src/Model/PostTable.php";
 
 $conn = ConnectionProvider::connectDatabase();
-
 $table = new PostTable($conn);
 //var_dump($table->getFeaturedPosts());
 ?>
