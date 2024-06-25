@@ -1,2 +1,2 @@
 INSERT INTO user (email, password)
-VALUES ('user@gmail.com', 'password');
+VALUES ('anotheruser@gmail.com', 'password123');

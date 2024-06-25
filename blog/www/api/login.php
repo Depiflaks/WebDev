@@ -28,4 +28,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo "something's going wrong";
         http_response_code(500);
     }
-}
+}   

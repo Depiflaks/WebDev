@@ -26,7 +26,7 @@ $table = new PostTable($conn);
 $controller = new UserController($table);
 
 if (!$controller->authByCookie()) {
-    exit();
+    header('Location: ' . "http://localhost:8001/home.php", true, 301);
 }
 
 $letter = $_SESSION["email"][0];

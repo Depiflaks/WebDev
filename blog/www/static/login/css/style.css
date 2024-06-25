@@ -14,5 +14,9 @@ body {
     background-blend-mode: multiply;
 
     min-height: 100vh;
+    min-width: 100%;
 }
 
+::-webkit-scrollbar {
+    display: none;
+}

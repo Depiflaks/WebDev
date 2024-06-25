@@ -4,6 +4,7 @@
     border-radius: 3px;
     width: 20%;
     height: 560px;
+    min-width: 250px;
 }
 
 .login-block h1 {

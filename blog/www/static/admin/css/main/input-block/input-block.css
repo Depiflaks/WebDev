@@ -248,3 +248,9 @@
     top: -36px;
     left: 90%;
 }
+
+@media screen and (max-width: 1000px) {
+    .input-block__hide-switch {
+        left: 88%;
+    }
+}
